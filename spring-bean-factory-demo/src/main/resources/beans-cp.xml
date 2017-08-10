@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="myorg" class="com.azlan.springdemo.Organization"
+		factory-method="createInstance">
+		<constructor-arg value="BMW" name="companyName" />
+		<constructor-arg value="1929" name="yearOfIncorporation" />
+	</bean>
+
+	<bean id="myorg2" class="com.azlan.springdemo.Organization"
+		factory-method="getInstance" factory-bean="organizationFactory">
+		<constructor-arg value="BMW" name="companyName" />
+		<constructor-arg value="1929" name="yearOfIncorporation" />
+	</bean>
+	<bean id="organizationFactory"
+		class="com.azlan.springdemo.OrganizationFactory">
+	</bean>
+</beans>
