@@ -12,8 +12,10 @@ public class PropertiesWithXmlApp {
 		// 1. Create the application context (container)
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-cp.xml");
 
-		TradeFair tradeFair = (TradeFair) ctx.getBean("myfair");
-		System.out.println(tradeFair.specialPromotionalPricing());
+//		TradeFair tradeFair = (TradeFair) ctx.getBean("myfair");
+//		System.out.println(tradeFair.specialPromotionalPricing());
+		Organization org = (Organization) ctx.getBean("myorg");
+		System.out.println(org);
 		
 		// 4. Close the application context
 		((ClassPathXmlApplicationContext) ctx).close();
